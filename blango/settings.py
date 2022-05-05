@@ -20,6 +20,7 @@ class Dev(Configuration):
   # Build paths inside the project like this: BASE_DIR / 'subdir'.
   BASE_DIR = Path(__file__).resolve().parent.parent
 
+  SITE_ID = 1
 
   # Quick-start development settings - unsuitable for production
   # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -35,6 +36,12 @@ class Dev(Configuration):
   ]
   
   AUTH_USER_MODEL = "blango_auth.User"
+
+  # Django Allauth
+  ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+  ACCOUNT_EMAIL_REQUIRED = True
+  ACCOUNT_USERNAME_REQUIRED = False
+  ACCOUNT_AUTHENTICATION_METHOD = "email"
 
   # SECURITY WARNING: don't run with debug turned on in production!
   DEBUG = values.BooleanValue(True)
@@ -113,12 +120,17 @@ class Dev(Configuration):
       'django.contrib.contenttypes',
       'django.contrib.sessions',
       'django.contrib.messages',
+      'django.contrib.sites',
       'django.contrib.staticfiles',
       'crispy_forms',
       'crispy_bootstrap5',
       'debug_toolbar',
       'blango_auth',
       'blog',
+      "allauth",
+      "allauth.account",
+      "allauth.socialaccount",
+      "allauth.socialaccount.providers.google",
   ]
 
   MIDDLEWARE = [
