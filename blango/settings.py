@@ -53,6 +53,18 @@ class Dev(Configuration):
 
   ADMINS = [("Helga Hatur", "darkmitecatanet@gmail.com"), ("Habroc Team", "fahnencazevuolasfanas@protonmail.com")]
 
+  ACCOUNT_ACTIVATION_DAYS = 7
+
+#   DEFAULT_FROM_EMAIL = 'darkmitecatanet@gmail.com'
+
+  EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+#   EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#   EMAIL_HOST = 'smtp.gmail.com'
+#   EMAIL_HOST_USER = 'darkmitecatanet@gmail.com'
+#   EMAIL_HOST_PASSWORD = 'sahtangirdi'
+#   EMAIL_PORT = 587
+#   EMAIL_USE_TLS = True
+
   LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,

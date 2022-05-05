@@ -1,0 +1,2 @@
+To activate your account, click on this link:
+{{ scheme }}://{{ request.get_host }}{% url "django_registration_activate" activation_key %}
